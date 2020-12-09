@@ -36,3 +36,47 @@
     transform: rotate(360deg);
   }
 }
+
+/* NAV COMPONENT */
+
+header {
+  text-align: center;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+header nav a {
+  color: black;
+  text-decoration: none;
+}
+
+header nav div {
+  font-size: larger;
+  background-color: lightblue;
+  width: 200px;
+  border-radius: 7px;
+  transition: background-color 0.2s, color 0.2s;
+  padding: 10px;
+}
+
+header nav div:hover {
+  background-color: darkgray;
+}
+
+/* AUTH COMPONENT */
+
+.auth form {
+  padding: 50px;
+}
+.auth form input {
+  background-color: lightblue;
+  color: black;
+  padding: 10px;
+  border-radius: 5px;
+  display: block;
+  margin: 10px auto;
+  font-size: 1.2em;
+}

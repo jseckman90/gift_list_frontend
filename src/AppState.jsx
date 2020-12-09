@@ -1,17 +1,25 @@
-import React from "react";
+import React, { useContext, useReducer } from "react";
 
 //INITIAL STATE
 
 const initialState = {
   url: "http://jsgiftlistbackend.herokuapp.com",
+  token: null,
+  username: null,
 };
 
 //REDUCER
 // action  = {type: "", payload: }
 const reducer = (state, action) => {
+  let newState;
   switch (action.type) {
+    case "auth":
+      newState = { ...state, ...action.payload };
+      return newState;
+      break;
     default:
       return state;
+      break;
   }
 };
 

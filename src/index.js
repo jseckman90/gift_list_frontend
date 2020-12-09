@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
-import { AppState } from "./AppState";
+import { AppState } from "./AppState.jsx";
 
 ReactDOM.render(
   <AppState>
