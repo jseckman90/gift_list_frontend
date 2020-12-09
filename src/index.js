@@ -3,13 +3,13 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import { AppState } from "./AppState.jsx";
 
 ReactDOM.render(
   <AppState>
     <Router>
-      <App />
+      <Route path="/" component={App} />
     </Router>
   </AppState>,
   document.getElementById("root")
