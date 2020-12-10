@@ -6,6 +6,18 @@ const initialState = {
   url: "http://jsgiftlistbackend.herokuapp.com",
   token: null,
   username: null,
+  people: null,
+  new: {
+    name: "",
+    budget: "",
+    gifts: "",
+  },
+  edit: {
+    id: 0,
+    name: "",
+    budget: "",
+    gifts: "",
+  },
 };
 
 //REDUCER
@@ -20,6 +32,10 @@ const reducer = (state, action) => {
     case "logout":
       newState = { ...state, token: null, username: null };
       window.localStorage.removeItem("auth");
+      return newState;
+      break;
+    case "getPeople":
+      newState = { ...state, people: action.payload };
       return newState;
       break;
     default:
