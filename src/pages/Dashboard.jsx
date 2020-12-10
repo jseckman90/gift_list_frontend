@@ -39,6 +39,27 @@ const Dashboard = (props) => {
             <h2>{person.name}</h2>
             <h4>{person.budget}</h4>
             <h4>{person.gifts}</h4>
+            <button
+              onClick={() => {
+                dispatch({ type: "select", payload: person });
+                props.history.push("/dashboard/edit");
+              }}
+            >
+              Edit
+            </button>
+
+            <button
+              onClick={() => {
+                fetch(url + "/people/" + person.id, {
+                  method: "DELETE",
+                  headers: {
+                    Authorization: "bearer " + token,
+                  },
+                }).then(() => getPeople());
+              }}
+            >
+              Delete
+            </button>
           </div>
         ))}
       </ul>

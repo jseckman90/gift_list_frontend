@@ -9,11 +9,11 @@ const Nav = (props) => {
     <header>
       <h1>Gift List App</h1>
       <nav>
-        <Link to="/">
-          <div>Home</div>
-        </Link>
         {!state.token ? (
           <>
+            <Link to="/">
+              <div>Home</div>
+            </Link>
             <Link to="/auth/signup">
               <div>Sign Up</div>
             </Link>
