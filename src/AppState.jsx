@@ -11,12 +11,16 @@ const initialState = {
     name: "",
     budget: "",
     gifts: "",
+    purchased: "",
+    wrapped: "",
   },
   edit: {
     id: 0,
     name: "",
     budget: "",
     gifts: "",
+    purchased: "",
+    wrapped: "",
   },
 };
 

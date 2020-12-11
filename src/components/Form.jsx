@@ -44,27 +44,43 @@ const Form = (props) => {
   };
 
   return (
-    <div className="form">
+    <div className="form-container">
       <form onSubmit={handleSubmit}>
+        <div class="mb-3">
+          <input
+            className="form-control"
+            type="text"
+            name="name"
+            value={formData.name}
+            placeholder="Name"
+            onChange={handleChange}
+          />
+        </div>
+        <div class="mb-3">
+          <input
+            className="form-control"
+            type="number"
+            name="budget"
+            value={formData.budget}
+            placeholder="Budget"
+            onChange={handleChange}
+          />
+        </div>
+        <div class="mb-3">
+          <input
+            className="form-control"
+            type="text"
+            name="gifts"
+            value={formData.gifts}
+            placeholder="Gifts"
+            onChange={handleChange}
+          />
+        </div>
         <input
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
+          className="btn btn-primary"
+          type="submit"
+          value={action.toUpperCase()}
         />
-        <input
-          type="number"
-          name="budget"
-          value={formData.budget}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="gifts"
-          value={formData.gifts}
-          onChange={handleChange}
-        />
-        <input type="submit" value={action} />
       </form>
     </div>
   );

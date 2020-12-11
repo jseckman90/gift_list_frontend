@@ -27,42 +27,53 @@ const Dashboard = (props) => {
     <div className="dashboard">
       <h1>{username}'s Gift List</h1>
       <Link to="/dashboard/new">
-        <button>New Person</button>
+        <button className="btn btn-outline-dark">
+          <ion-icon size="large" name="add-outline"></ion-icon>NEW PERSON
+        </button>
       </Link>
       <Route
         path="/dashboard/:action"
         render={(rp) => <Form {...rp} getPeople={getPeople} />}
       />
-      <ul>
-        {state.people.map((person) => (
-          <div className="person" key={person.id}>
-            <h2>{person.name}</h2>
-            <h4>{person.budget}</h4>
-            <h4>{person.gifts}</h4>
-            <button
-              onClick={() => {
-                dispatch({ type: "select", payload: person });
-                props.history.push("/dashboard/edit");
-              }}
-            >
-              Edit
-            </button>
+      <div className="container">
+        <ul>
+          {state.people.map((person) => (
+            <div className="card" style={{ width: "18rem" }} key={person.id}>
+              <img src="..." className="card-img-top" alt="..." />
+              <div className="card-body">
+                <h3 className="card-title">{person.name}</h3>
+                <h4>${person.budget}</h4>
+                <h4>{person.gifts}</h4>
+                <h4>{person.purchased}</h4>
+                <h4>{person.wrapped}</h4>
 
-            <button
-              onClick={() => {
-                fetch(url + "/people/" + person.id, {
-                  method: "DELETE",
-                  headers: {
-                    Authorization: "bearer " + token,
-                  },
-                }).then(() => getPeople());
-              }}
-            >
-              Delete
-            </button>
-          </div>
-        ))}
-      </ul>
+                <button
+                  className="btn"
+                  onClick={() => {
+                    dispatch({ type: "select", payload: person });
+                    props.history.push("/dashboard/edit");
+                  }}
+                >
+                  <ion-icon size="large" name="create-outline"></ion-icon>
+                </button>
+                <button
+                  className="btn"
+                  onClick={() => {
+                    fetch(url + "/people/" + person.id, {
+                      method: "DELETE",
+                      headers: {
+                        Authorization: "bearer " + token,
+                      },
+                    }).then(() => getPeople());
+                  }}
+                >
+                  <ion-icon size="large" name="trash-outline"></ion-icon>
+                </button>
+              </div>
+            </div>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 
