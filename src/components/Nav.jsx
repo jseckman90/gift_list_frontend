@@ -10,13 +10,11 @@ const Nav = (props) => {
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
           <div className="navbar-brand">
-            <ion-icon size="large" name="gift-outline"></ion-icon>Gift List
+            <ion-icon size="large" name="gift-outline"></ion-icon>
+            Gift List
           </div>
           {!state.token ? (
             <>
-              <Link to="/">
-                <div className="btn btn-outline-info">Home</div>
-              </Link>
               <Link to="/auth/signup">
                 <div className="btn btn-outline-info">Sign Up</div>
               </Link>

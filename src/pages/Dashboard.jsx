@@ -42,8 +42,6 @@ const Dashboard = (props) => {
                 <h2 className="card-title">{person.name}</h2>
                 <h3>${person.budget}</h3>
                 <h4>{person.gifts}</h4>
-                <h4>{person.purchased}</h4>
-                <h4>{person.wrapped}</h4>
 
                 <button
                   className="btn"
