@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap");
+
 .App {
   text-align: center;
 }
@@ -37,11 +41,42 @@
   }
 }
 
+/* Nav Bar  */
+.navbar-brand {
+  font-family: "Mountains of Christmas", cursive;
+  font-size: 2em;
+}
+
+.nav-options {
+  font-family: "Hammersmith One", sans-serif;
+  font-size: larger;
+  font-style: none;
+}
+
+/* jumbotron */
+
+.jumbotron {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://s.yimg.com/os/creatr-images/2018-11/13a121c0-e6bb-11e8-a9cd-6c0f6d9c0622");
+  font-family: "Mountains of Christmas", cursive;
+  text-align: center;
+  color: white;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  padding: 25px;
+  opacity: 90%;
+}
+
 /* dashboard */
 .dashboard {
   text-align: center;
   margin: 20px;
+  font-family: "Mountains of Christmas", cursive;
 }
+
 ul {
   margin: 15px;
   display: flex;
@@ -61,4 +96,14 @@ form {
   text-align: center;
   max-width: 50%;
   min-width: 30%;
+  font-family: "Hammersmith One", sans-serif;
+}
+
+/* auth */
+.auth {
+  display: flex;
+  justify-content: center;
+}
+.auth input {
+  margin: 5px;
 }

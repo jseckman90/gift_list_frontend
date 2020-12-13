@@ -22,6 +22,15 @@ const App = (props) => {
   return (
     <>
       <Route path="/" component={Nav} />
+      <div className="jumbotron">
+        <div>
+          <h1 className="display-4">Gift List</h1>
+          <h2>
+            Gift list is an easy way to keep track of gifts you need to buy for
+            friends and family
+          </h2>
+        </div>
+      </div>
 
       <Switch>
         <Route exact path="/" component={Home} />

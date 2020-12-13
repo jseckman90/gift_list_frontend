@@ -15,18 +15,19 @@ const Nav = (props) => {
           {!state.token ? (
             <>
               <Link to="/">
-                <div>Home</div>
+                <div className="btn btn-outline-info">Home</div>
               </Link>
               <Link to="/auth/signup">
-                <div>Sign Up</div>
+                <div className="btn btn-outline-info">Sign Up</div>
               </Link>
               <Link to="/auth/login">
-                <div>Log In</div>
+                <div className="btn btn-outline-info">Log In</div>
               </Link>
             </>
           ) : null}
           {state.token ? (
             <div
+              className="btn btn-outline-info"
               onClick={() => {
                 dispatch({ type: "logout" });
                 props.history.push("/");

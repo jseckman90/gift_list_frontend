@@ -6,7 +6,6 @@ import Form from "../components/Form.jsx";
 const Dashboard = (props) => {
   const { state, dispatch } = useAppState();
   const { token, url, people, username } = state;
-  console.log(state);
 
   const getPeople = async () => {
     const response = await fetch(url + "/people/", {
@@ -27,7 +26,7 @@ const Dashboard = (props) => {
     <div className="dashboard">
       <h1>{username}'s Gift List</h1>
       <Link to="/dashboard/new">
-        <button className="btn btn-outline-dark">
+        <button className="btn btn-outline-dark new">
           <ion-icon size="large" name="add-outline"></ion-icon>NEW PERSON
         </button>
       </Link>
@@ -39,10 +38,9 @@ const Dashboard = (props) => {
         <ul>
           {state.people.map((person) => (
             <div className="card" style={{ width: "18rem" }} key={person.id}>
-              <img src="..." className="card-img-top" alt="..." />
               <div className="card-body">
-                <h3 className="card-title">{person.name}</h3>
-                <h4>${person.budget}</h4>
+                <h2 className="card-title">{person.name}</h2>
+                <h3>${person.budget}</h3>
                 <h4>{person.gifts}</h4>
                 <h4>{person.purchased}</h4>
                 <h4>{person.wrapped}</h4>
